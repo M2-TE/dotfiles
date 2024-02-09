@@ -1,0 +1,60 @@
+{ 
+    "output": "DP-1",
+    "layer": "top",
+    "height": 30,
+    "spacing": 4, // gaps between modules
+    "modules-left": ["network", "memory", "cpu"],
+    "modules-right": ["tray", "wireplumber", "clock"],
+    "tray": {
+        // "icon-size": 21,
+        //"spacing": 10
+    },
+    "wireplumber": {
+        "scroll-step": 0,
+	"format": "{volume}% {icon}",
+        "format-muted": "{volume}% {icon}",
+        "on-click": "pavucontrol",
+        "format-icons": ["", "", ""]
+    },
+    "pulseaudio": {
+        //"scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "network": {
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": ""
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+    "clock": {
+        "format-alt": "{:%d-%m-%Y}"
+    }
+}
