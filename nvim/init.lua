@@ -1,5 +1,2 @@
-require("core.options")
-require("core.mappings")
-require("core.plugins")
-require("after.plugins")
-require("after.mappings")
+require("options")
+require("core")

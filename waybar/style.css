@@ -10,7 +10,7 @@ window#waybar {
     transition-duration: .5s;
 }
 
-#cpu, #memory, #disk, #network, #temperature, #wireplumber, #tray, #clock, #battery {
+#cpu, #memory, #disk, #network, #temperature, #wireplumber, #tray, #clock, #battery, #bluetooth {
     background: transparent;
     color: rgb(255, 255, 255);
     padding: 0px 10px;
