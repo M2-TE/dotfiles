@@ -5,8 +5,6 @@
     "modules-left": ["network", "memory", "cpu", "temperature"],
     "modules-right": ["tray", "bluetooth", "wireplumber", "battery", "clock"],
     "tray": {
-        // "icon-size": 21,
-        //"spacing": 10
     },
     "wireplumber": {
         "scroll-step": 0,
@@ -42,7 +40,7 @@
     "cpu": {
         "format": "{usage}% ",
         "tooltip": false,
-        "interval": 2
+        "interval": 1
     },
     "memory": {
         "format": "{}% "
@@ -50,7 +48,7 @@
     "temperature": {
         "hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon",
         "input-filename": "temp1_input",
-        "interval": 2,
+        "interval": 1,
         "critical-threshold": 90,
         "format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", "", "", "", "", "", ""]
