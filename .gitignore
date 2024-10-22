@@ -3,7 +3,5 @@
 
 # Except for:
 !.gitignore
-!/hypr
-!/waybar
-!/kitty
 !/nvim
+!/alacritty
