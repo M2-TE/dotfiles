@@ -7,5 +7,8 @@ return {
         winbar = {
             enabled = false,
         }
-    }
+    },
+    keys = {
+        "<C-j>"
+    },
 }

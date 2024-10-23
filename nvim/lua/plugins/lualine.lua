@@ -13,7 +13,7 @@ return {
             },
             ignore_focus = {},
             always_divide_middle = true,
-            globalstatus = false,
+            globalstatus = true,
             refresh = {
                 statusline = 1000,
                 tabline = 1000,
@@ -22,8 +22,8 @@ return {
         },
         sections = {
             lualine_a = {'mode'},
-            lualine_b = {'branch', 'diff', 'diagnostics'},
-            lualine_c = {'filename'},
+            lualine_b = {'branch', 'diagnostics'},
+            lualine_c = {},
             lualine_x = {'encoding', 'filetype'},
             lualine_y = {},
             lualine_z = {'location'}
