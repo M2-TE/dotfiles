@@ -10,3 +10,6 @@ require("config.lazy")
 -- testing stuff
 vim.keymap.set({"n", "x", "o"}, "x",  "<Plug>(leap-forward)")
 vim.keymap.set({"n", "x", "o"}, "X",  "<Plug>(leap-backward)")
+
+-- cmake testing stuff
+-- vim.keymap.set({"n", "x", "o"}, "<C-S-b>", "echo 'hello'")
