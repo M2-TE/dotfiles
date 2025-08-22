@@ -1,9 +1,10 @@
 [window]
 dimensions = { columns = 128, lines = 32 }
-padding = { x = 3, y = 3 }
-dynamic_padding = true
+padding = { x = 5, y = 5 }
+dynamic_padding = false
 opacity = 0.9
 blur = true
+decorations = "None"
 
 [font]
 normal = { family = "JetBrainsMono Nerd Font" }
