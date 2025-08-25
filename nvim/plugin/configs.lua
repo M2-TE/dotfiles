@@ -23,7 +23,7 @@ opt.undofile = true -- Enable persistent undo
 opt.completeopt = { "menuone", "popup", "noinsert" } -- Options for completion menu
 opt.winborder = "rounded" -- Use rounded borders for windows
 opt.hlsearch = true -- Disable highlighting of search results
-opt.cmdheight = 0 -- hide cmdline when not in use
+-- opt.cmdheight = 0 -- hide cmdline when not in use
 opt.fillchars = { eob = " "} -- hide ~ on empty lines
 -- opt.mousemoveevent = true -- enable mouse movement events
 

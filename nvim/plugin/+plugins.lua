@@ -109,7 +109,7 @@ vim.api.nvim_create_autocmd({ "DirChanged" }, {
     callback = function()
         -- check if directory contains a CMakeLists.txt
         local cwd = vim.loop.cwd()
-        if vim.fn.filereadable(cwd .. "/CMakeLists.txt") then
+        if vim.fn.filereadable(cwd .. "/CMakeLists.txt") == 1 then
             -- immediately load with vim.pack
             vim.pack.add({
                 "https://github.com/Civitasv/cmake-tools.nvim.git"
