@@ -23,13 +23,6 @@ opt.undofile = true -- Enable persistent undo
 opt.completeopt = { "menuone", "popup", "noinsert" } -- Options for completion menu
 opt.winborder = "rounded" -- Use rounded borders for windows
 opt.hlsearch = true -- Disable highlighting of search results
--- opt.cmdheight = 0 -- hide cmdline when not in use
+opt.cmdheight = 0 -- hide cmdline when not in use
 opt.fillchars = { eob = " "} -- hide ~ on empty lines
--- opt.mousemoveevent = true -- enable mouse movement events
-
-local cmd = vim.cmd
-cmd.filetype("plugin indent on") -- Enable filetype detection, plugins, and indentation
-
--- pretend netrw is already loaded
-vim.g.loaded_netrwPlugin = 1
-vim.g.loaded_netrw = 1
+opt.mousemoveevent = true -- enable mouse movement events
