@@ -7,7 +7,7 @@ vim.pack.add({
     -- lsp
     { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("1.*") },
     { src = "https://github.com/Saghen/blink.pairs", version = vim.version.range("*") },
-    { src = "https://github.com/saghen/blink.download" },
+    { src = "https://github.com/saghen/blink.download" }, -- needed by blink.pairs
     { src = "https://github.com/mason-org/mason.nvim" },
 
     -- editor panes
@@ -27,7 +27,6 @@ vim.pack.add({
 }, { confirm = false, load = true })
 
 -- lsp
-require("blink.pairs").setup({})
 require("blink.cmp").setup({
     keymap = { preset = "super-tab" },
     appearance = {
@@ -44,38 +43,9 @@ require("blink.cmp").setup({
     fuzzy = { implementation = "prefer_rust_with_warning" },
     signature = { enabled = true },
 })
+require("blink.pairs").setup({})
 
--- file browser
-require("neo-tree").setup({})
-vim.keymap.set("n", "<C-e>", function()
-    require("neo-tree.command").execute({ toggle = true })
-end)
--- pretend netrw is already loaded
-vim.g.loaded_netrwPlugin = 1
-vim.g.loaded_netrw = 1
-
--- statusline
-require("lualine").setup({
-    options = {
-        theme = "codedark",
-        component_separators = { left = '', right = ''},
-        section_separators = { left = '', right = ''},
-        globalstatus = true,
-    },
-    sections = {
-        lualine_a = {"mode"},
-        lualine_b = {"branch", "diagnostics"},
-        lualine_c = {},
-        lualine_x = {},
-        lualine_y = {"lsp_status", "progress"},
-        lualine_z = {"location"}
-    },
-    disabled_filetypes = {
-        "neo-tree",
-    },
-})
-
--- buffer tabs
+-- editor panes
 local bufferline = require("bufferline")
 bufferline.setup({
     options = {
@@ -105,13 +75,37 @@ bufferline.setup({
         show_buffer_close_icons = true,
     }
 })
-
--- inline terminal
+require("lualine").setup({
+    options = {
+        theme = "codedark",
+        component_separators = { left = '', right = ''},
+        section_separators = { left = '', right = ''},
+        globalstatus = true,
+    },
+    sections = {
+        lualine_a = {"mode"},
+        lualine_b = {"branch", "diagnostics"},
+        lualine_c = {},
+        lualine_x = {},
+        lualine_y = {"lsp_status", "progress"},
+        lualine_z = {"location"}
+    },
+    disabled_filetypes = {
+        "neo-tree",
+    },
+})
 require("toggleterm").setup({
     open_mapping = "<C-j>"
 })
+require("neo-tree").setup({})
+vim.keymap.set("n", "<C-e>", function()
+    require("neo-tree.command").execute({ toggle = true })
+end)
+-- pretend netrw is already loaded
+vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrw = 1
 
--- TODO
+-- git
 require("gitsigns").setup({})
 
 -- cmake
