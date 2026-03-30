@@ -27,6 +27,8 @@ vim.pack.add({
 }, { confirm = false, load = true })
 
 -- lsp
+-- require("mason").setup({
+-- })
 require("blink.cmp").setup({
     keymap = { preset = "super-tab" },
     appearance = {
@@ -43,7 +45,8 @@ require("blink.cmp").setup({
     fuzzy = { implementation = "prefer_rust_with_warning" },
     signature = { enabled = true },
 })
-require("blink.pairs").setup({})
+require("blink.pairs").setup({
+})
 
 -- editor panes
 local bufferline = require("bufferline")
@@ -98,17 +101,40 @@ require("toggleterm").setup({
     open_mapping = "<C-j>"
 })
 require("neo-tree").setup({})
+
+-- git (TODO: auto load?)
+require("gitsigns").setup({})
+
+-- keybinds
 vim.keymap.set("n", "<C-e>", function()
     require("neo-tree.command").execute({ toggle = true })
 end)
+
 -- pretend netrw is already loaded
 vim.g.loaded_netrwPlugin = 1
 vim.g.loaded_netrw = 1
 
--- git
-require("gitsigns").setup({})
-
 -- cmake
+-- require("cmake-tools").setup({
+--     cmake_build_directory = "build",
+--     cmake_generate_options = { "-G Ninja -D CMAKE_EXPORT_COMPILE_COMMANDS=1 -D CMAKE_BUILD_TYPE=Release -D CMAKE_C_COMPILER=clang -D CMAKE_CXX_COMPILER=clang++" },
+--     cmake_compile_commands_options = {
+--         action = "lsp",
+--     },
+--     cmake_executor = {
+--         name = "toggleterm",
+--         opts = {
+--             direction = "horizontal",
+--         },
+--     },
+--     cmake_runner = {
+--         name = "toggleterm",
+--         opts = {
+--             direction = "horizontal",
+--         },
+--     },
+
+-- })
 -- vim.api.nvim_create_autocmd({ "DirChanged" }, {
 --     callback = function()
 --         -- check if directory contains a CMakeLists.txt

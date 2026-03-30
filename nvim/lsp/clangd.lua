@@ -1,6 +1,6 @@
 return {
     cmd = { 'clangd' },
-    filetypes = { "c", "cpp", "cppm", "h", "hpp" },
+    filetypes = { "c", "cpp" },
     capabilities = {
         offsetEncoding = { "utf-8", "utf-16" },
         textDocument = {

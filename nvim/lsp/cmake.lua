@@ -1,5 +1,5 @@
 return {
-    cmd = { "cmake-language-server" },
+    cmd = { "neocmakelsp" },
     filetypes = {
         "cmake",
     },
