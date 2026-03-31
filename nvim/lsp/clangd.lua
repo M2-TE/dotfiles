@@ -1,5 +1,13 @@
 return {
-    cmd = { 'clangd' },
+    cmd = {
+        "clangd",
+        "--background-index",
+        "--clang-tidy",
+        "--completion-style=detailed",
+        "--header-insertion=never",
+        "--fallback-style=llvm",
+        "--log=error",
+    },
     filetypes = { "c", "cpp" },
     capabilities = {
         offsetEncoding = { "utf-8", "utf-16" },
