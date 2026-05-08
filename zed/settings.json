@@ -7,6 +7,8 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "format_on_save": "off",
+  "cli_default_open_behavior": "new_window",
   "extend_comment_on_newline": false,
   "middle_click_paste": false,
   "show_whitespaces": "selection",
@@ -74,7 +76,7 @@
   "project_panel": {
     "git_status_indicator": true,
     "git_status": true,
-    "hide_hidden": true,
+    "hide_hidden": false,
     "hide_root": true,
     "sticky_scroll": false,
     "bold_folder_labels": false,
